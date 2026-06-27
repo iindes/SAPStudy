@@ -33,7 +33,9 @@
 ### Plant
 - 공장, 창고 등
 - 저장위치
-- 재고수량·금액 평가의 단위
+- **판매 및 생산계획 수립 (Sales & Operation Plan (S&OP)) 의 단위**
+- **재고평가 (Valuation) 의 단위**
+- 부가세 신고 사업장(Business Place)의 단위
 
 ### Purchasing Organization
 - MM
@@ -71,7 +73,10 @@
 - 단위 관련
 - Val.
 - Company Code 단위 평가범위
-- 재고평가의 기준
+- **판매 및 생산계획 수립 (Sales & Operation Plan (S&OP)) 의 단위**
+- **재고평가 (Valuation) 의 단위**
+    - 예하 SLoc서 재고수량 관리 (MARG)
+- 부가세 신고 사업장(Business Place)의 단위
 
 ## 4. Purchasing Org
 - MM

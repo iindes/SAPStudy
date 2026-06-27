@@ -22,37 +22,56 @@
    - Price
    - Qty
    - Delivery Date
-<< 하기 3개는 필수 >>
+
 2 1/2. 계약관리 (Outlying Agreement)
 - Contract
 - Sch. Agr. (납품일자)
 - J.I.T.
 - Serialisation
-3. Sales Order (내부용) / Purchase Order (고객 -> 회사) -> Order Mgmt. System (OMS)
+
+<< 하기 3개는 필수 >> -> Order Mgmt. System (OMS)
+3. Sales Order (내부용) / Purchase Order (고객 -> 회사)
    - Business Partner
    - Material
    - Price
    - Qty
    - Delivery Date
-4. Delivery (Out-Bound)
-5. Billing
+4. Delivery
+   - **Outbound Delivery**
+      - 출하 문서
+   - **Picking**
+      - 완제품 창고에서 출하할 제품/상품을 꺼내옴
+   - Packing (Optional)
+      - 포장
+   - Loading (Optional)
+      - 적하 (포장된 제품/상품을 컨테이너 등 운송 장비에 싣)
+   - **Goods Issue**
+      - 출고 (우리의 손을 떠났음을 기록)
+      - 생성되는 문서:
+         - Material Doc.: Qty. Chng. -> Plant 실무자가 관심
+         - Accounting Doc.: Value Chng. (비용의 증가 (CoGS) \ 재고의 감소) -> 재무팀이 관심
+5. Billing / Invoice
+- Accounting Doc.: Value Chng. (매출채권 증가 \ 수익 증가) -> 재무팀이 관심
 
+# **The account-based SAP applications store credit balances (revenue, liabilities and owner’s equity) with NEGATIVE signs in the data basis!!!!!**
 
 ### 생산전략
 
-- Make to Stock: 재고생산
-- Make to Order: 수주생산
+- Make to Stock (MTS): 재고생산
+- Make to Order (MTO): 수주생산
 
 ---
 
 ## PP
 
 - 0-1. Forecasting (Input)
+   - Make to Stock: 재고생산
 - 0-2. Sales Order (Input)
+   - Make to Order: 수주생산
 
-1. Master Planning (기준생산계획)
+1. Master Planning (MP, 기준생산계획)
    - FERT only
-2. Material Requirement Planning (자재소요량계획)
+2. Material Requirement Planning (MRP, 자재소요량계획)
    - BoM에 의거
    2-1. 반제품(HALB) 및 원자재(ROH) 재고수량 파악
 3. Planned Order
@@ -66,9 +85,14 @@
    - HALB → Production Order
    - FERT → Production Order
 
+(/omm03 MRP-II View 내 Procurement Type이 F인 경우) -> PUR
+
+(/omm03 MRP-II View 내 Procurement Type이 E인 경우)
 4. Production Order
 
 5. 실적
+
+
 
 ---
 
@@ -76,7 +100,9 @@
 
 1. Purchase Requisition
 2. Request for Quotation / Quotation
-3. Purchase Order
+**3. Purchase Order**
+- 법적 구속력이 있음.
+- 상법상 5년 보관 의무가 있음.
 4. Goods Receipt / Inbound Delivery
 5. Logistics Invoice Verification
 
@@ -90,9 +116,11 @@ Invoice: Material, Price
 
 ## MM - IM (Inventory Mgmt.)
 
-- Goods Receipt (입고)
-- Issue (출고)
-- Transfer Posting (이건 전기) - Status Chng.
+- Goods Receipt (입고) for...
+   - Purchcase Order (구매입고) - 101F
+   - Production Order (생산입고) - 101E
+- Issue (출고) / Comsumption (예- 상위 자재가 됨)
+- Transfer Posting (이전 전기) - Status Chng.
 - Stock Transfer (재고 이전) - Physical Chng.
 - Physical Inventory (재고조사)
   - Closed: 폐창식
