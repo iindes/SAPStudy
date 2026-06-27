@@ -4,8 +4,9 @@
 
 ### Client
 - 조직구조 최상단
-- 예) 600 (MARA - MANDT)
+- 예) 600 
     - Client - Dependent
+        - MARA 첫 Field - MANDT
 
 ### Company Code (CoCd / BUKRS)
 - 재무제표 작성 단위
@@ -41,7 +42,7 @@
 - MM
 - 구매조직설정의 3개층위 (전사적, CoCd, Plant)
     - Client의 경우 구매전담회사를 둠.
-        - MRO (Maintenance, Repair, Operation)
+        - MRO (Maintenance 유지보수, Repair 고장수리, Operation 운영)
         - Shipbuilding의 경우 Overhaul (창정비)
 
 ### Sales Organisation (SD)
